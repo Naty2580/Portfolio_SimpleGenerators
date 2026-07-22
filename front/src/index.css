@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base-dark: #0A0A0A;
+  --color-accent: #FF3366;
+  
+  --font-sans: 'Inter Tight Variable', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Fluid Spacing System */
+  --spacing-fluid-p: clamp(1rem, 0.5vw + 1rem, 2.5rem);
+}
+
+@layer base {
+  :root {
+    background-color: var(--color-base-dark);
+    color: #ffffff;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  body {
+    /* Fluid typography for body */
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 2026 Fluid Hero Typography */
+  h1 {
+    font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+  }
+  
+  .bento-hover-glow {
+    position: relative;
+  }
+  .bento-hover-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      800px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+      rgba(255, 51, 102, 0.15),
+      transparent 40%
+    );
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .bento-hover-glow:hover::before {
+    opacity: 1;
+  }
+}

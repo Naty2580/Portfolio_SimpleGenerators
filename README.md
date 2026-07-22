@@ -31,7 +31,7 @@ The goal of this project is to demonstrate the ability to create visually distin
 
 ## Project Structure
 
-
+```text
 front/
 ├── src/
 │   ├── modules/
@@ -43,27 +43,28 @@ front/
 │   ├── config/
 │   └── pages/
 └── public/
-
+```
 
 ## Installation
 
 ### Clone the repository
 
-
-git clone https://github.com/Naty2580/Portfolio_SimpleGenerators.git
-cd Portfolio_SimpleGenerators/front
-
+```bash
+git clone https://github.com/Naty2580/Portfolio_SimpleGenerator.git
+cd Portfolio_SimpleGeneratorfront
+```
 
 ### Install dependencies
 
-
+```bash
 npm install
-
+```
 
 ### Start the development server
 
-
+```bash
 npm run dev
+```
 
 
 
